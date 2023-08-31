@@ -4,4 +4,4 @@
 #### Image: 
 ![Sravani Seelam] https://github.com/Sravani0821/5143-OPS-seelam/blob/main/sravani%20(1).jpg
 #### Avatar:
-![Sravani Seelam] 
+![Sravani Seelam] https://github.com/Sravani0821/5143-OPS-seelam/blob/main/sravaniavatar%20.jpg
