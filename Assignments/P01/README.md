@@ -1,9 +1,9 @@
 ### 5143 - PO1
 ### 5143 Shell Project 
 ### Group members
-Ashritha parupati
-Sravani Seelam
-Srikanth Yanala
+- Ashritha parupati
+- Sravani Seelam
+- Srikanth Yanala
 
 ### overview:
 This project is to implements a basic shell where it runs most of the commands that a shell does.
