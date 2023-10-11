@@ -202,7 +202,8 @@ chmod xxx	                              change modify permission""")
         # Get user input and add it to the history
         input1=input()
         history.append(input1)
-        # Split the input into a list of words
+     
+         # Split the input into a list of words
         inp=input1.lower().split()
         #print(inp)
         # Handle various commands based on the input
@@ -223,7 +224,8 @@ chmod xxx	                              change modify permission""")
         elif inp[0]=='pwd':
              # Print the current working directory
             print(os.getcwd())
-# Handle the 'cd' command to change directories
+
+         # Handle the 'cd' command to change directories
         elif inp[0]=='cd':
             if len(inp)==2:
                 if inp[1]=='..':
@@ -236,44 +238,53 @@ chmod xxx	                              change modify permission""")
                     os.chdir(cur_path)
             elif len(inp)==1:
                 os.chdir(os.path.expanduser("~"))
+        
          # Handle the 'cp' command to copy files       
         elif inp[0]=='cp':
             copy_file(inp[1],inp[2])
-             # Handle the 'mv' command to move files
+         
+         # Handle the 'mv' command to move files
         elif inp[0]=='mv':
             move_file(inp[1],inp[2])
-            # Handle the 'rm' command to remove files
+          
+         # Handle the 'rm' command to remove files
         elif inp[0]=='rm':
             if len(inp) == 3 and inp[1] == "-r":
                 remove_file(os.getcwd()+'\\'+inp[2], recursive=True)
             else:
                 for file in inp[1:]:
                     remove_file(file)
-                    # Handle the 'rmdir' command to remove directories
+                   
+         # Handle the 'rmdir' command to remove directories
         elif inp[0]=='rmdir':
             remove_dir(inp[1])
-            # Handle the 'cat' command for display a each of the files as if they were concatenated
+        
+         # Handle the 'cat' command for display a each of the files as if they were concatenated
         elif inp[0]=='cat' and len(inp)==5 and '>' in inp :
             concat(inp[1],inp[2],inp[4])
             continue
         elif inp[0]=='cat':
             display(inp[1:])
-            # Handle the 'less' command to display a file a page at a time
+          
+         # Handle the 'less' command to display a file a page at a time
         elif inp[0]=='less':
             display_less(inp[1])
-             # Handle the 'head' command to display the first few lines of a file
+          
+         # Handle the 'head' command to display the first few lines of a file
         elif inp[0]=='head':
             if len(inp)==4 and inp[2]=='-n':
                 display_head(inp[1],int(inp[3]))
             elif len(inp)==2:
                 display_head(inp[1])
-                # Handle the 'tail' command to display the last few lines of a file
+             
+         # Handle the 'tail' command to display the last few lines of a file
         elif inp[0]=='tail':
             if len(inp)==4 and inp[2]=='-n':
                 display_tail(inp[1],int(inp[3]))
             elif len(inp)==2:
                 display_tail(inp[1])
-                 # Handle the 'grep' command 
+              
+         # Handle the 'grep' command 
         elif inp[0] == "grep" and len(inp) >1 and inp[1] == "-l":
             keyword = inp[2]
             only_filenames = True
@@ -284,25 +295,31 @@ chmod xxx	                              change modify permission""")
             keyword = inp[1]
             file_path = inp[2]
             grep(keyword, file_path)
-            # Handle the 'wc' command to count the lines,words,characters in a file
+          
+         # Handle the 'wc' command to count the lines,words,characters in a file
         elif inp[0]=='wc':
             if len(inp)==2:
                 word_count(inp[1])
             else:word_count(inp[2])
-                # Handle the 'sort' command to sort data
+             
+         # Handle the 'sort' command to sort data
         elif inp[0]=='sort':
             sort_file(inp[1])
-            # Handle the 'who' command to list the users currently logged in
+        
+         # Handle the 'who' command to list the users currently logged in
         elif inp[0]=='who':
             print(os.getlogin())
-             # Display the command history
+          
+         # Display the command history
         elif inp[0]=='history':
             for i in history:
                 print(i)
-                # Execute a command from history
+               
+         # Execute a command from history
         elif '!' in inp[0]:
             print(history[int(inp[0][1:])-1])
-            # changes the modify permission
+           
+         # changes the modify permission
         elif inp[0]=='chmod':
             os.chmod(inp[2], int(inp[1]))
             print('File permission changed successfully')
