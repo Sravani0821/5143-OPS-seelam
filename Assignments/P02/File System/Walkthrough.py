@@ -43,28 +43,42 @@ def demo_command(fs, inp):
             table.add_row([item[0],  item[2] , item[3]  ,item[4] , item[5] , item[7] , item[8]])
         print(table)
         table.clear_rows()
+        
        # mkdir command creates a new directory.
     elif inp[0] == "mkdir":
         fs.create_directory(fs.current_directory, inp[1], "user", "group", "rwxr-xr-x")
         print(f"Directory {inp[1]} created!")
-        # 
+        
+        # cd command change to named directory.
     elif inp[0] == "cd":
         fs.change_directory(inp[1])
         print(f"Changed directory to {inp[1]}")
+        
+        # pwd displays the path of current directory.
     elif inp[0] == "pwd":
         print(fs.current_directory)
+        
+        # mv move the file successfully from inp[1] to inp[2].
     elif inp[0] == "mv":
         fs.move(inp[1], inp[2])
         print(f"Moved {inp[1]} to {inp[2]}")
+        
+        # cp copied inp[1] to inp[2] successfully
     elif inp[0] == "cp":
         fs.copy(inp[1], inp[2])
         print(f"Copied {inp[1]} to {inp[2]}")
+        
+        # delete the directory inp[1].
     elif inp[0] == "rm -rf":
         fs.delete_directory(inp[1])
         print(f"Deleted directory {inp[1]}")
+        
+        # changes the file permissions of inp[1] to inp[2].
     elif inp[0] == "chmod":
         fs.change_permissions(inp[1], inp[2])
         print(f"Changed permissions of {inp[1]} to {inp[2]}")
+
+    # displays command_history and created files.
     elif inp[0] == "history":
         print("Command History: ",command_history)
     elif inp[0] == "touch":
