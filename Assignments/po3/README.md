@@ -1,6 +1,4 @@
-#### Instructions
-
-Import all packages and run walkthrough.py program#### 5143 - P03
+#### 5143 - P03
 #### CPU SCHEDULING SIMULATION
 
 #### Group Members
