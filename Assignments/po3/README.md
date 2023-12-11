@@ -14,3 +14,12 @@ This project involves implementing a CPU Scheduling Simulation in Python, focusi
 
 #### Instructions
 Import all packages and run main.py
+Console
+Table
+Queue
+SysClock
+CPU
+IO
+PCB
+time
+sys
